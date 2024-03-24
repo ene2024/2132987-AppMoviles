@@ -43,4 +43,14 @@ ngOnDestroy(){
   console.log("AppComponent: OnDestroy");
 } 
 
+title: string = 'Mi nueva página!!';
+
+hazmeClic(): void {
+  alert("hiciste click!!!");
+}
+
+imgUrl: string = 'https://i.redd.it/7ksiaa4exhh01.gif'
+
+nombreAlumno: string = '';
+
 }

@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      {{title}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,9 +13,17 @@
     </ion-toolbar>
   </ion-header>
 
+
   <div id="container">
-    <strong>Ready to create an app?</strong>
+    <ion-button (click)="hazmeClic()">Hazme clic!</ion-button>
+    <img [src]="imgUrl">
+    <p>Inserta el nombre del alumno en el campo: </p>
+    
+    <ion-input [(ngModel)]="nombreAlumno"></ion-input>
+
+    <ion-label>El alumno se llama: <strong>{{nombreAlumno}}</strong></ion-label>    
+
     <app-nuevo-componente></app-nuevo-componente>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+   
   </div>
 </ion-content>
