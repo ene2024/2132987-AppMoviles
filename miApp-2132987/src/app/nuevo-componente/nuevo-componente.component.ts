@@ -11,4 +11,7 @@ export class NuevoComponenteComponent  implements OnInit {
 
   ngOnInit() {}
 
+  verdadero: boolean =false;
+  
+
 }

@@ -6,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage{
+
 constructor(){
   console.log("AppComponent: Constructor");
 }
+  
 ngOnChanges(){
   console.log("AppComponent: OnChanges");
 }
