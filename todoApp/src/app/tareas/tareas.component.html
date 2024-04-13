@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Tareas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card *ngFor="let tarea of tareas" class="tarea-card">
+    <ion-card-header>
+      <ion-card-subtitle>Fecha de entrega: {{ tarea.fechaEntrega }}</ion-card-subtitle>
+      <ion-card-title>{{ tarea.nombre }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>{{ tarea.detalles }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button color="secondary" > <!--(click)="agregarTarea()"-->
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
