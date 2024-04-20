@@ -1,1 +1,24 @@
+ion-card {
+    background-color: #f0f0f0 !important; 
+  }
+
+  ion-card-title{
+    color: rgb(255, 0, 230);
+  }
+
+  ion-modal {
+    --background:rgb(255, 0, 230);
+    --backdrop-opacity: 0.75; 
+  }
+  
+  .boton-agregar {
+    --background: rgb(255, 0, 230); 
+    --color: black; 
+    position: fixed;
+    bottom: 20px; 
+    right: 20px;
+    font-size: 35px;
+    width: 60px;
+    border-radius: 50% !important;
+  }
 

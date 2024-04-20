@@ -1,3 +1,25 @@
-<p>
-  agregar-tareas works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title>Crear Tarea</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()" [strong]="true">Confirmar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="stacked">Nombre de la Tarea</ion-label>
+    <ion-input type="text" [(ngModel)]="nombreTarea" placeholder="Ingrese el nombre de la tarea"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Fecha a Entregar</ion-label>
+    <ion-input type="date" [(ngModel)]="fechaEntrega"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Detalles</ion-label>
+    <ion-textarea [(ngModel)]="detalles" placeholder="Ingrese los detalles de la tarea"></ion-textarea>
+  </ion-item>
+</ion-content>

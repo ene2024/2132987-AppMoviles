@@ -25,3 +25,24 @@
 #container a {
   text-decoration: none;
 }
+
+
+
+.encabezado{
+  --ion-background-color: rgb(255, 0, 230) !important; 
+}
+
+ion-header {
+  ion-toolbar {
+    ion-title {
+      text-align: center;
+      font-weight: bold; 
+      font-size: 30px; 
+    }
+  }
+}
+
+
+  ion-content{
+    --background:  rgba(255, 0, 230, 0.318);
+}
