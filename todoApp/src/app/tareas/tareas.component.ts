@@ -16,6 +16,14 @@ export class TareasComponent implements OnInit {
 
   constructor(private modalCtrl: ModalController) {}
 
+  ngOnInit(): void {
+    const storedTareas = localStorage.getItem('tareas');
+
+    if (storedTareas) {
+      this.tareas = JSON.parse(storedTareas);
+    }
+  }
+
   async openModal() {
     const modal = await this.modalCtrl.create({
       component: AgregarTareasComponent,
@@ -31,8 +39,11 @@ export class TareasComponent implements OnInit {
 
   agregarTarea(tarea: Tarea) {
     this.tareas.push(tarea); 
+
+    localStorage.setItem('tareas', JSON.stringify(this.tareas));
+
   }
 
-  ngOnInit() {}
+
 }
 
