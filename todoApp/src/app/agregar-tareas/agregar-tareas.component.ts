@@ -14,6 +14,7 @@ export class AgregarTareasComponent {
   nombreTarea: string ='';
   fechaEntrega: string='';
   detalles: string='';
+  
 
   constructor(private modalCtrl: ModalController) {}
 
@@ -27,7 +28,7 @@ export class AgregarTareasComponent {
     const tarea: Tarea= {
       nombre: this.nombreTarea,
       fecha: new Date(this.fechaEntrega),
-      detalles: this.detalles
+      detalles: this.detalles    
     };
     this.modalCtrl.dismiss(tarea, 'confirm');
   } 

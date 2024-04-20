@@ -13,7 +13,8 @@ import {Tarea} from '../tarea.interface';
 export class TareasComponent implements OnInit {
   
   tareas: Tarea[] = [];
-
+  mostrarDetalles: boolean = false;
+  
   constructor(private modalCtrl: ModalController) {}
 
   ngOnInit(): void {
@@ -42,6 +43,14 @@ export class TareasComponent implements OnInit {
 
     localStorage.setItem('tareas', JSON.stringify(this.tareas));
 
+  }
+  toggleDetalles(tarea: Tarea) {
+    this.mostrarDetalles = !this.mostrarDetalles; 
+  }
+
+  eliminarTarea(index: number) {
+    this.tareas.splice(index, 1); 
+    localStorage.setItem('tareas', JSON.stringify(this.tareas));
   }
 
 
