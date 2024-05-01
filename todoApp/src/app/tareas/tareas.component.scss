@@ -28,3 +28,25 @@ ion-card {
     right: 20px;
 
 }
+
+ion-accordion{
+  background-color:#dddbca;
+  width: 20 px;
+}
+
+
+ion-accordion.accordion-collapsing ion-item[slot='header'],
+ion-accordion.accordion-collapsed ion-item[slot='header'] {
+  --background: #dddbca;
+  color:#8c886a;
+  font-weight: bold;
+  width: 15%;
+
+}
+
+ion-accordion.accordion-expanding ion-item[slot='header'],
+ion-accordion.accordion-expanded ion-item[slot='header'] {
+  --background: #8c886a ;
+  font-weight: bold;
+  width: 15%;
+}

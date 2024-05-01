@@ -4,16 +4,20 @@
     <ion-card-subtitle>{{ tarea.fecha | date:'mediumDate' }}</ion-card-subtitle>
   </ion-card-header>
 
-  <ion-card-content *ngIf="mostrarDetalles">
-    <p>{{ tarea.detalles }}</p>
-  </ion-card-content>
-
-  <ion-button class="boton-agregar2" (click)="toggleDetalles(tarea)">
-    {{ mostrarDetalles ? '- Ocultar detalles' : '+ Ver más detalles' }}
-  </ion-button>
+ 
+  <ion-accordion-group>
+    <ion-accordion value="first">
+      <ion-item slot="header">
+        <ion-label>Mostrar Detalles</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">{{tarea.detalles}}</div>
+    </ion-accordion>
+  </ion-accordion-group>
   <ion-button (click)="eliminarTarea(i)" color="danger">Eliminar</ion-button>
 
+
 </ion-card>
+
 
 <ion-button expand="block" (click)="openModal()" class="boton-agregar" size="small">+</ion-button>
 
