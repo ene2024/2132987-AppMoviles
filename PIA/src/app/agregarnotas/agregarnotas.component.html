@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button  (click)="cancel()"> <ion-icon size="large"  color="danger" name="close-circle-outline"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-title>Nota</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()" ><ion-icon color="success" size="large" name="checkmark-circle-outline"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item>
+    <ion-textarea [autoGrow]="true" labelPlacement="stacked" label="Detalles:" [(ngModel)]="notes" placeholder="Escribe aquí"  [counter]="true" maxlength="200" (keydown.enter)="agregarVinieta()"></ion-textarea>
+  </ion-item>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button> <ion-icon size="large"  color="secondary" name="camera"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button><ion-icon color="secondary" size="large" name="mic"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button><ion-icon color="secondary" size="large" name="checkbox"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button (click)="toggleVinietas()"><ion-icon color="secondary" size="large" name="list"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-footer>
