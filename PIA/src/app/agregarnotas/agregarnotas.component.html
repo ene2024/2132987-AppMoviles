@@ -11,9 +11,21 @@
 </ion-header>
 <ion-content>
   <ion-item>
-    <ion-textarea [autoGrow]="true" labelPlacement="stacked" label="Detalles:" [(ngModel)]="notes" placeholder="Escribe aquí"  [counter]="true" maxlength="200" (keydown.enter)="agregarVinieta()"></ion-textarea>
+    <ion-input type="text"  placeholder="Título de la nota:)"></ion-input>
   </ion-item>
-</ion-content>
+  <ion-item> 
+    <ion-accordion value="first">
+      <ion-item slot="header" color="light">
+        <ion-label>First Accordion</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">First Content</div>
+    </ion-accordion>
+    <ion-datetime></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-textarea [autoGrow]="true" labelPlacement="stacked" label="Detalles:" [(ngModel)]="notes" placeholder="Escribe aquí"  [counter]="true" (keydown.enter)="agregarVinieta()"></ion-textarea>
+  </ion-item>
+  </ion-content>
 
 <ion-footer>
   <ion-toolbar>
