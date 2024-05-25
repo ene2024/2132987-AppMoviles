@@ -10,11 +10,21 @@ import { NgForm } from '@angular/forms';
 })
 export class Tab2Page {
 
+  titulo: string;
+  descripcion: string;
+  isDisabled: boolean = true;
   @ViewChild("crearNotaform") notasForm: any;
   firestore: Firestore = inject(Firestore)
 
   constructor() {}
 
+  checkInputs() {
+    if (this.titulo && this.descripcion) {
+      this.isDisabled = true;
+    } else {
+      this.isDisabled = false;
+    }
+  }
   agregarNota():void{
     const acollection = collection(this.firestore, 'notas');
     addDoc(acollection, {
