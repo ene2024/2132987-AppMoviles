@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { AuthService } from '../servives/auth.service';
+import { Storage, ref, uploadBytes, listAll, getDownloadURL} from '@angular/fire/storage';
+
 
 @Component({
   selector: 'app-tab3',
@@ -14,14 +16,40 @@ export class Tab3Page {
   showProfile = false;
   header: any;
   message:any;
+  profileImageUrl: string | null = null;
+  eamail: string | null = null;
+
+
 
 	constructor(
 		private fb: FormBuilder,
 		private loadingController: LoadingController,
 		private alertController: AlertController,
 		private authService: AuthService,
-		private router: Router
+		private router: Router,
+		private storage: Storage
+
 	) {}
+
+	uploadImage(event: any): void {
+		const file = event.target.files[0];
+		console.log(file);
+	
+		const imgRef = ref(this.storage, `images/${file.name}`);
+	
+		uploadBytes(imgRef, file)
+		  .then(() => {
+			getDownloadURL(imgRef)
+			  .then(url => {
+				console.log('URL de descarga:', url);
+				this.profileImageUrl = url; // Guarda la URL de la imagen como URL de perfil
+			  })
+			  .catch(error => console.log('Error al obtener la URL de descarga:', error));
+		  })
+		  .catch(error => console.log('Error al subir la imagen:', error));
+	  }
+
+
 
 	get email() {
 		return this.credentials.get('email');
@@ -46,7 +74,7 @@ export class Tab3Page {
 		await loading.dismiss();
 
 		if (user) {
-      window.location.href = '/tabs/tab1';
+			this.showProfile = !this.showProfile;
 		} else {
 			this.showAlert('El registro falló:(', '¡Intenta de nuevo!');
 		}
@@ -56,11 +84,13 @@ export class Tab3Page {
 		const loading = await this.loadingController.create();
 		await loading.present();
 
+
 		const user = await this.authService.login(this.credentials.value);
 		await loading.dismiss();
 
 		if (user) {
-      window.location.href = '/tabs/tab1';
+			this.showProfile = !this.showProfile;
+
 		} else {
 			this.showAlert('Fallo el ingreso', '¡Por favor inténtalo de nuevo!');
 		}
