@@ -11,14 +11,14 @@
   </ion-header>
   <ion-content class="ion-padding"> 
   <ion-item-sliding *ngFor="let nota of notas">
-    <ion-item>
+    <ion-item >
       <ion-label>
         <h2>{{ nota.titulo }}</h2>
         <p>{{ nota.descripcion }}</p>
       </ion-label>
     </ion-item>
     <ion-item-options side="end">
-      <ion-item-option color="danger" (click)="deleteNota(nota.id)">
+      <ion-item-option color="secondary" (click)="deleteNota(nota.id)">
         Eliminar
       </ion-item-option>
     </ion-item-options>

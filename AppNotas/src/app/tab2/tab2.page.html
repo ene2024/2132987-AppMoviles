@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="primary">
+  <ion-toolbar color="secondary">
     <ion-title>
       Agregar Notas
     </ion-title>
@@ -19,7 +19,7 @@
         <ion-textarea  type="text" name="description" ngModel (input)="checkInputs()"></ion-textarea>
       </ion-item>
       
-    <ion-button expand="full" type="submit" (click)="summitForm()"  [disabled]="isDisabled" href = '/tabs/tab1'>Agregar Nota</ion-button>
+    <ion-button expand="block"  type="submit" (click)="summitForm()"  [disabled]="isDisabled">Agregar Nota</ion-button>
   </ion-card>
 </form>
 </ion-content>

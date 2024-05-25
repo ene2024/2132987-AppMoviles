@@ -31,6 +31,7 @@ export class Tab2Page {
       'titulo' : this.notasForm.value.titulo,
       'descripcion' : this.notasForm.value.description
     });
+    
   }
 
   resetearForm():void{
