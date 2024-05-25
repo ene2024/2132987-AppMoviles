@@ -36,17 +36,21 @@ export class Tab3Page {
 			password: ['', [Validators.required, Validators.minLength(6)]]
 		});
 
+		await this.loadUserProfile();
+    }
+	  
+	async loadUserProfile(): Promise<void> {
 		const user = await this.authService.getCurrentUser();
 		if (user) {
-			this.showProfile = true;
-			this.eamail = user.email;
-			const imgRef = ref(this.storage, `images/${user.uid}.jpg`);
-		try {
+		  this.showProfile = true;
+		  this.eamail = user.email;
+		  const imgRef = ref(this.storage, `images/${user.uid}.jpg`);
+		  try {
 			this.profileImageUrl = await getDownloadURL(imgRef);
-		} catch (error) {
+		  } catch (error) {
 			console.log('Error al obtener la URL de la imagen de perfil:', error);
+		  }
 		}
-    }
 	  }
 
 	  async uploadImage(event: any):  Promise<void> {
