@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Agregar Notas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <form #crearNotaform ="ngForm"> 
+  <ion-card> 
+      <ion-item>
+        <ion-label position="stacked">Título</ion-label>
+        <ion-input type="text" name="titulo" ngModel ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Descripción</ion-label>
+        <ion-textarea  type="text" name="description" ngModel ></ion-textarea>
+      </ion-item>
+      
+    <ion-button expand="full" type="submit" (click)="summitForm()"   href = '/tabs/tab1'>Agregar Nota</ion-button>
+  </ion-card>
+</form>
+</ion-content>

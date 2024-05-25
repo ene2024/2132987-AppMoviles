@@ -1,0 +1,45 @@
+
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>
+        Tab 3
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <form (ngSubmit)="login()" [formGroup]="credentials" *ngIf="!showProfile">
+      <ion-item fill="solid" class="ion-margin-bottom">
+        <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+        <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors"
+          >Correo no válido</ion-note
+        >
+      </ion-item>
+      <ion-item fill="solid" class="ion-margin-bottom">
+        <ion-input type="password" placeholder="Contraseña" formControlName="password"></ion-input>
+        <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors"
+          >La contraseña tiene que ser de seis caracteres</ion-note
+        >
+      </ion-item>
+  
+      <ion-button type="submit" expand="block" [disabled]="!credentials.valid">Ingresar</ion-button>
+      <ion-button type="button" expand="block" color="secondary" (click)="register()"
+        >Crear una cuenta</ion-button
+      >
+    </form>
+
+    <div *ngIf="showProfile" class="profile-container">
+      <ion-card>
+        <ion-card-header class="card-header-center">
+          <ion-avatar class="large-avatar">
+            <img src="https://www.gravatar.com/avatar?d=mp" alt="Avatar">
+          </ion-avatar>
+          <ion-card-title>Tu Perfil</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="card-content-center">
+          <p>Correo: </p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+  </ion-content>

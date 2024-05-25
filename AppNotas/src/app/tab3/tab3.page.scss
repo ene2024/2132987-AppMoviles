@@ -1,0 +1,28 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .card-header-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .large-avatar {
+    max-width: 200px;
+    width: auto;
+    max-height: auto;
+    height: 200px;
+    margin-bottom: 16px;
+  }
+  
+  .card-content-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
