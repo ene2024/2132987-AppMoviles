@@ -36,10 +36,11 @@
           </ion-avatar>
         </ion-card-header>
         <ion-card-content class="card-content-center">
-          <p>Correo: </p>
+          <p>Correo: {{eamail}}</p>
           <input type="file" (change)="uploadImage($event)" accept="image/*">
+          <ion-button expand="block" (click)="logout()">Logout</ion-button>
         </ion-card-content>
       </ion-card>
     </div>
-
+    
   </ion-content>
