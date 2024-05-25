@@ -18,9 +18,6 @@ export class HomePage {
   message = 'This modal example uses triggers to automatically open a modal when the button is clicked.';
   name: string;
 
-  cancel() {
-    this.modal.dismiss(null, 'cancel');
-  }
 
 
   onWillDismiss(event: Event) {
